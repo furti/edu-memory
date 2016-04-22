@@ -28,7 +28,7 @@
       this.$timeout(function() {
         if (memory.spieler.vergleiche(memory.offeneKarten[0], memory.offeneKarten[1])) {
 
-          this.versuche = 0;
+          memory.versuche = 0;
         } else {
           memory.offeneKarten[0].offen = false;
           memory.offeneKarten[1].offen = false;
