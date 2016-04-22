@@ -29,6 +29,20 @@
 
             var ersteKarte = kartenstapel.tauscheKarten(ersteKartenNummer, zweiteKartenNummer);
           }
+        },
+
+        /**
+         * Vergleicht zwei Karten miteinander.
+         * Diese Funktion wird aufgerufen wenn zwei Karten aufgeschlagen wurden.
+         *
+         *	Jede karte bietet das Feld "name". Es gibt immer zwei Karten mit dem gleichen Namen.
+         *
+         * @param  {[type]} karte1 Die erste Karte.
+         * @param  {[type]} karte2 Die zweite Karte.
+         * @return {boolean}        true wenn beide Karten gleich sind. Ansonsten false.
+         */
+        vergleiche: function(karte1, karte2) {
+          return karte1.name === karte2.name;
         }
       };
     });
