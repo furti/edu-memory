@@ -1,0 +1,56 @@
+memory {
+  display: flex;
+  justify-content: center;
+}
+.karten {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 960px;
+}
+karte {
+  perspective: 1000px;
+  display: block;
+  height: 200px;
+  width: 200px;
+  margin: 20px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+karte:hover {
+  cursor: pointer;
+}
+karte .rahmen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: 0.6s;
+  transition-property: transform;
+  transform-style: preserve-3d;
+}
+.rahmen.offen {
+  transform: rotateY(180deg);
+}
+karte .vorderseite, karte .rueckseite {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+karte .vorderseite img {
+  width: 100%;
+}
+karte .rueckseite {
+  z-index: 2;
+  background-color: #5CB85C;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent)
+}
+karte:hover .rueckseite {
+  background-color: #5BC0DE;
+}
+karte .vorderseite {
+  transform: rotateY(180deg);
+  background-color: #F9F9F9;
+  border: 1px solid #B0B4B5;
+}

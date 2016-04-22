@@ -1,0 +1,23 @@
+{
+  "name": "edu-memory",
+  "version": "1.0.0",
+  "description": "Memory for educational purposes",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/furti/edu-memory.git"
+  },
+  "author": "Daniel Furtlehner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/furti/edu-memory/issues"
+  },
+  "homepage": "https://github.com/furti/edu-memory#readme",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "http-server": "^0.9.0"
+  }
+}
