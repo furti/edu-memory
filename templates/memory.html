@@ -1,3 +1,16 @@
 <div class="karten">
   <karte ng-repeat="karte in $ctrl.kartenstapel.karten" daten="karte" ng-click="$ctrl.karteWenden(karte)"></karte>
 </div>
+<div class="punkte">
+  <h3>Punkte: {{$ctrl.punkte}}</h3>
+</div>
+<div class="dialog-backdrop" ng-if="$ctrl.fertig">
+  <div class="dialog">
+    <div class="dialog-header">
+      Super!
+    </div>
+    <div class="dialog-content">
+      {{ $ctrl.glueckwunsch }}
+    </div>
+  </div>
+</div>

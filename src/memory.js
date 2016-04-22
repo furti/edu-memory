@@ -8,7 +8,12 @@
 
     this.spieler.mische(this.kartenstapel);
     this.offeneKarten = [];
+    this.gefundenePaare = 0;
     this.versuche = 0;
+    this.punkte = 0;
+
+    this.fertig = false;
+    this.glueckwunsch = '';
   }
 
   MemoryController.prototype.karteWenden = function(karte) {
@@ -27,6 +32,8 @@
       //und der Spieler sieht die zweite Karte nie.
       this.$timeout(function() {
         if (memory.spieler.vergleiche(memory.offeneKarten[0], memory.offeneKarten[1])) {
+          memory.gefundenePaare += 1;
+          memory.punkte += memory.spieler.berechnePunkte(memory.versuche, memory.gefundenePaare);
 
           memory.versuche = 0;
         } else {
@@ -35,6 +42,11 @@
         }
 
         memory.offeneKarten.length = 0;
+
+        if (memory.gefundenePaare === memory.kartenstapel.zaehleKarten() / 2) {
+          memory.fertig = true;
+          memory.glueckwunsch = memory.spieler.glueckwunsch(memory.punkte, memory.gefundenePaare);
+        }
       }, 1000);
     }
   };

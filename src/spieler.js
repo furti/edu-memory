@@ -43,6 +43,37 @@
          */
         vergleiche: function(karte1, karte2) {
           return karte1.name === karte2.name;
+        },
+        /**
+         * Berechnet die Punkte die der Spieler für das finden eines Paares bekommt.
+         *
+         * @param  {number} versuche        Die Anzahl der Versuche die der Spieler für das finden des Paares benötigt hat.
+         * @param  {number} gefundenePaare  Die Anzahl der Paare die der Spieler bereits gefunden hat.
+         * @return {number}                 Die Punkte die der Spieler bekommt.
+         */
+        berechnePunkte: function(versuche, gefundenePaare) {
+          if (versuche === 1) {
+            return 100;
+          }
+
+          var punkte = 100 - (versuche * gefundenePaare * 10);
+
+          if (punkte < 10) {
+            return 10;
+          }
+
+          return punkte;
+        },
+
+        /**
+         * Die Funktion wird aufgerufen wenn alle Kartenpaare gefunden wurden um den Glückwunschtext für den Spieler zu generieren.
+         *
+         * @param  {number} punkte          Die Anzahl der Punkte die der Spieler erreicht hat.
+         * @param  {number} gefundenePaare  Die Anzahl der Paare die der Spieler gefunden hat.
+         * @return {string}                 Der Glückwunschtext der dem Spieler angezeigt wird.
+         */
+        glueckwunsch: function(punkte, gefundenePaare) {
+          return 'Glückwunsch. Du hast ' + punkte + ' von ' + (gefundenePaare * 100) + ' Punkte erreicht!!! :)';
         }
       };
     });

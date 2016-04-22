@@ -54,3 +54,36 @@ karte .vorderseite {
   background-color: #F9F9F9;
   border: 1px solid #B0B4B5;
 }
+
+/**Dialog**/
+
+.dialog-backdrop {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  ;
+}
+.dialog {
+  opacity: 1;
+  margin-top: 40px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  width: 400px;
+  height: 200px;
+}
+.dialog-header {
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #B0B4B5;
+}
+.dialog-content {
+  padding: 10px;
+  font-weight: bold;
+}
