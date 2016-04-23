@@ -45,16 +45,20 @@
   }
 
   angular.module('memory')
-    .factory('kartenstapel', function() {
-      var kartenstapel = new Kartenstapel();
+    .factory('kartenstapelFabrik', function() {
+      return {
+        neu: function() {
+          var kartenstapel = new Kartenstapel();
 
-      karteRegistrieren(kartenstapel, 'face.svg');
-      karteRegistrieren(kartenstapel, 'favorite.svg');
-      karteRegistrieren(kartenstapel, 'pets.svg');
-      karteRegistrieren(kartenstapel, 'rowing.svg');
-      karteRegistrieren(kartenstapel, 'shoppingcart.svg');
-      karteRegistrieren(kartenstapel, 'thumb.svg');
+          karteRegistrieren(kartenstapel, 'face.svg');
+          karteRegistrieren(kartenstapel, 'favorite.svg');
+          karteRegistrieren(kartenstapel, 'pets.svg');
+          karteRegistrieren(kartenstapel, 'rowing.svg');
+          karteRegistrieren(kartenstapel, 'shoppingcart.svg');
+          karteRegistrieren(kartenstapel, 'thumb.svg');
 
-      return kartenstapel;
+          return kartenstapel;
+        }
+      };
     });
 })(angular);

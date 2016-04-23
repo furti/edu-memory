@@ -1,11 +1,16 @@
 (function(angular) {
   "use strict";
 
-  function MemoryController(kartenstapel, spieler, $timeout) {
-    this.kartenstapel = kartenstapel;
+  function MemoryController(kartenstapelFabrik, spieler, $timeout) {
     this.spieler = spieler;
     this.$timeout = $timeout;
+    this.kartenstapelFabrik = kartenstapelFabrik;
 
+    this.start();
+  }
+
+  MemoryController.prototype.start = function() {
+    this.kartenstapel = this.kartenstapelFabrik.neu();
     this.spieler.mische(this.kartenstapel);
     this.offeneKarten = [];
     this.gefundenePaare = 0;
@@ -14,7 +19,7 @@
 
     this.fertig = false;
     this.glueckwunsch = '';
-  }
+  };
 
   MemoryController.prototype.karteWenden = function(karte) {
     if (karte.offen || this.offeneKarten.length === 2) {
