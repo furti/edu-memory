@@ -33,7 +33,7 @@
          * @return {boolean}                         true wenn genügend Karten aufgedeckt sind. Sonst false.
          */
         genugKartenAufgedeckt: function(anzahlAufgedeckterKarten) {
-          return anzahlAufgedeckterKarten === 2;
+          return false;
         },
 
         /**
