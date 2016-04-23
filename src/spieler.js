@@ -32,6 +32,18 @@
         },
 
         /**
+         * Hier wird geprüft, ob genug Karten Aufgedeckt sind um sie miteinander zu vergleichen.
+         *
+         * Wie das beim Memory ist die Anzahl der benötigten Karten für einen Versuch ja nicht schwer zu erraten ;)
+         *
+         * @param  {number} anzahlAufgedeckterKarten Die Anzahl der Aufgedeckten Karten.
+         * @return {boolean}                         true wenn genügend Karten aufgedeckt sind. Sonst false.
+         */
+        genugKartenAufgedeckt: function(anzahlAufgedeckterKarten) {
+          return anzahlAufgedeckterKarten === 2;
+        },
+
+        /**
          * Vergleicht zwei Karten miteinander.
          * Diese Funktion wird aufgerufen wenn zwei Karten aufgeschlagen wurden.
          *

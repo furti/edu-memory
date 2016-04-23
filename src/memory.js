@@ -29,7 +29,7 @@
     karte.offen = true;
     this.offeneKarten.push(karte);
 
-    if (this.offeneKarten.length === 2) {
+    if (this.spieler.genugKartenAufgedeckt(this.offeneKarten.length)) {
       this.versuche++;
       var memory = this;
 
