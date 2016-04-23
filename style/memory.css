@@ -76,14 +76,75 @@ karte .vorderseite {
   border-radius: 5px;
   width: 400px;
   height: 200px;
+  display: flex;
+  flex-direction: column;
 }
 .dialog-header {
   padding: 10px;
-  font-size: 18px;
+  font-size: 36px;
   font-weight: bold;
   border-bottom: 1px solid #B0B4B5;
+  perspective: 1000px;
 }
 .dialog-content {
   padding: 10px;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+/* Dialog Animation */
+
+.dialog-header span {
+  animation-name: jump;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  display: inline-block;
+  transform-style: preserve-3d;
+}
+.dialog-header .u {
+  animation-delay: 0.2s;
+}
+.dialog-header .p {
+  animation-delay: 0.4s;
+}
+.dialog-header .e {
+  animation-delay: 0.6s;
+}
+.dialog-header .r {
+  animation-delay: 0.8s;
+}
+.dialog-header .sign {
+  animation-delay: 1s;
+}
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-18px);
+  }
+  30% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+  70% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

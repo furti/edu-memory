@@ -43,7 +43,7 @@
 
         memory.offeneKarten.length = 0;
 
-        if (memory.gefundenePaare === memory.kartenstapel.zaehleKarten() / 2) {
+        if (memory.spieler.wurdeAllesGefunden(memory.gefundenePaare, memory.kartenstapel.zaehleKarten())) {
           memory.fertig = true;
           memory.glueckwunsch = memory.spieler.glueckwunsch(memory.punkte, memory.gefundenePaare);
         }

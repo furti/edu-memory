@@ -66,6 +66,16 @@
         },
 
         /**
+         * Diese Funktion wird aufgerufen um zu prüfen, ob alle Kartenpaare gefunden wurden.
+         * @param  {number} gefundenePaare Die Anzahl der bereits gefundenen Kartenpaare.
+         * @param  {number} anzahlKarten   Die Anzahl der Karten die insgesamt am Feld liegen.
+         * @return {boolean}                true wenn alle Kartenpaare gefunden wurden. Sonst false.
+         */
+        wurdeAllesGefunden: function(gefundenePaare, anzahlKarten) {
+          return gefundenePaare === anzahlKarten / 2;
+        },
+
+        /**
          * Die Funktion wird aufgerufen wenn alle Kartenpaare gefunden wurden um den Glückwunschtext für den Spieler zu generieren.
          *
          * @param  {number} punkte          Die Anzahl der Punkte die der Spieler erreicht hat.
