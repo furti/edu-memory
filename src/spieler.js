@@ -49,6 +49,22 @@
         vergleiche: function(karte1, karte2) {
           return false;
         },
+
+        /**
+         * Diese Funktion wird aufgerufen wenn zwei Karten aufgedeckt wurden, die aber nicht zusammenpassen.
+         *
+         * Jede karte hat die eigenschaft offen die angibt, ob die Karte offen oder verdeckt am Feld liegt.
+         * Wenn offen = true --> Karte liegt offen am Feld.
+         * Wenn offen = false --> Karte liegt verdeckt am Feld.
+         *
+         * @param  {[type]} karte1 Die erste aufgedeckte Karte.
+         * @param  {[type]} karte2 Die zweite aufgedeckte Karte.
+         */
+        kartenPassenNicht: function(karte1, karte2) {
+          karte1.offen = false;
+          karte2.offen = false;
+        },
+
         /**
          * Berechnet die Punkte die der Spieler für das finden eines Paares bekommt.
          *

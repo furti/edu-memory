@@ -42,8 +42,7 @@
 
           memory.versuche = 0;
         } else {
-          memory.offeneKarten[0].offen = false;
-          memory.offeneKarten[1].offen = false;
+          memory.spieler.kartenPassenNicht(memory.offeneKarten[0], memory.offeneKarten[1]);
         }
 
         memory.offeneKarten.length = 0;
