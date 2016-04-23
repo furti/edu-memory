@@ -33,7 +33,7 @@
          * @return {boolean}                         true wenn genügend Karten aufgedeckt sind. Sonst false.
          */
         genugKartenAufgedeckt: function(anzahlAufgedeckterKarten) {
-          return false;
+          return true;
         },
 
         /**
@@ -61,8 +61,7 @@
          * @param  {[type]} karte2 Die zweite aufgedeckte Karte.
          */
         kartenPassenNicht: function(karte1, karte2) {
-          karte1.offen = false;
-          karte2.offen = false;
+
         },
 
         /**
