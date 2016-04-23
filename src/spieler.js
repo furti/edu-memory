@@ -21,14 +21,7 @@
          *                               tauscheKarten(stelle1, stelle2): Tauscht die Karte an Stelle 1 mit der Karte an Stelle 2.
          */
         mische: function(kartenstapel) {
-          var kartenanzahl = kartenstapel.zaehleKarten();
 
-          for (var anzahlVertauschungen = 0; anzahlVertauschungen < 100; anzahlVertauschungen++) {
-            var ersteKartenNummer = zufallszahl(1, kartenanzahl);
-            var zweiteKartenNummer = zufallszahl(1, kartenanzahl);
-
-            var ersteKarte = kartenstapel.tauscheKarten(ersteKartenNummer, zweiteKartenNummer);
-          }
         },
 
         /**
@@ -54,7 +47,7 @@
          * @return {boolean}        true wenn beide Karten gleich sind. Ansonsten false.
          */
         vergleiche: function(karte1, karte2) {
-          return karte1.name === karte2.name;
+          return false;
         },
         /**
          * Berechnet die Punkte die der Spieler für das finden eines Paares bekommt.
@@ -64,17 +57,7 @@
          * @return {number}                 Die Punkte die der Spieler bekommt.
          */
         berechnePunkte: function(versuche, gefundenePaare) {
-          if (versuche === 1) {
-            return 100;
-          }
-
-          var punkte = 100 - (versuche * gefundenePaare * 10);
-
-          if (punkte < 10) {
-            return 10;
-          }
-
-          return punkte;
+          return 0;
         },
 
         /**
@@ -84,7 +67,7 @@
          * @return {boolean}                true wenn alle Kartenpaare gefunden wurden. Sonst false.
          */
         wurdeAllesGefunden: function(gefundenePaare, anzahlKarten) {
-          return gefundenePaare === anzahlKarten / 2;
+          return false;
         },
 
         /**
@@ -95,7 +78,7 @@
          * @return {string}                 Der Glückwunschtext der dem Spieler angezeigt wird.
          */
         glueckwunsch: function(punkte, gefundenePaare) {
-          return 'Glückwunsch. Du hast ' + punkte + ' von ' + (gefundenePaare * 100) + ' Punkte erreicht!!! :)';
+          return '';
         }
       };
     });
